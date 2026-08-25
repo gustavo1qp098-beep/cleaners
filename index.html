@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaraki - Site Oficial do Jogo</title>
+    
+    <!-- FAVICON (ÍCONE DA ABA) -->
+    <link rel="icon" type="image/png" href="img/logo.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen">
+
+    <!-- NAVEGAÇÃO -->
+    <nav class="flex justify-between items-center px-8 py-4 bg-slate-900/90 backdrop-blur border-b border-slate-800 fixed w-full top-0 z-50">
+        <div class="flex items-center gap-3">
+            <img src="img/logo.png" alt="Logo Zaraki" class="w-8 h-8 rounded-lg object-cover border border-sky-500/30">
+            <h1 class="text-2xl font-black tracking-wider text-sky-400 uppercase">ZARAKI</h1>
+        </div>
+        <div class="hidden md:flex space-x-6 text-sm font-semibold">
+            <a href="#sobre" class="hover:text-sky-400 transition">Sobre</a>
+            <a href="#mecanicas" class="hover:text-sky-400 transition">Mecânicas</a>
+            <a href="#roadmap" class="hover:text-sky-400 transition">Roadmap</a>
+            <a href="#requisitos" class="hover:text-sky-400 transition">Requisitos</a>
+            <a href="#equipe" class="hover:text-sky-400 transition">Equipe</a>
+        </div>
+        <button id="btn-modal-nav" class="bg-sky-500 hover:bg-sky-600 text-white font-bold px-5 py-2 rounded-lg transition shadow-lg shadow-sky-500/20">
+            Pré-Registro
+        </button>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="sobre" class="pt-36 pb-16 px-6 text-center max-w-5xl mx-auto">
+        <span class="text-xs font-bold bg-sky-500/10 text-sky-400 border border-sky-500/20 px-4 py-1.5 rounded-full uppercase tracking-widest">TCC - 3°A Desenvolvimento de Sistemas</span>
+        <h2 class="text-5xl md:text-7xl font-black mt-6 mb-6 leading-tight">Limpe a cidade. Ajude os moradores. Defenda as ruas.</h2>
+        <p class="text-slate-400 text-lg mb-8 max-w-2xl mx-auto">
+            Embarque em uma aventura urbana 3D desenvolvida na Godot Engine, onde explorar o bairro, cumprir tarefas e manter a ordem se tornam a sua principal missão.
+        </p>
+        <div class="flex justify-center gap-4">
+            <button id="btn-modal-hero" class="bg-emerald-500 hover:bg-emerald-600 text-white text-lg font-bold px-8 py-4 rounded-xl shadow-lg shadow-emerald-500/20 transition">
+                Garantir Vaga no Beta
+            </button>
+            <a href="#historia" class="bg-slate-800 hover:bg-slate-700 text-white text-lg font-bold px-8 py-4 rounded-xl border border-slate-700 transition">
+                Conhecer a Origem
+            </a>
+        </div>
+    </section>
+
+    <!-- COMO SURGIU A IDEIA -->
+    <section id="historia" class="py-16 px-6 max-w-4xl mx-auto border-t border-slate-800/80">
+        <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl">
+            <span class="text-xs font-bold text-sky-400 uppercase tracking-widest">Origem do Projeto</span>
+            <h3 class="text-3xl font-black mt-2 mb-4">Como surgiu a ideia do Zaraki?</h3>
+            <p class="text-slate-300 leading-relaxed mb-4">
+                A ideia do jogo nasceu da observação do cotidiano urbano e do desejo de criar uma experiência interativa leve, porém envolvente. Percebemos que os jogos tradicionais focam quase sempre na destruição, então decidimos ir pelo caminho oposto: e se a missão principal do jogador fosse restaurar, limpar e ajudar a sua própria comunidade?
+            </p>
+            <p class="text-slate-400 leading-relaxed text-sm">
+                Unindo mecânicas divertidas de exploração 3D, combate dinâmico utilizando objetos do dia a dia e um sistema de quests com os moradores locais, o projeto Zaraki se transformou no trabalho final da nossa turma do ensino técnico em Desenvolvimento de Sistemas.
+            </p>
+        </div>
+    </section>
+
+    <!-- MECÂNICAS -->
+    <section id="mecanicas" class="py-16 px-6 max-w-5xl mx-auto">
+        <h3 class="text-3xl font-bold text-center mb-12">Mecânicas Principais</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="card-mecanica overflow-hidden relative group">
+                <div class="text-4xl mb-4">🧹</div>
+                <h4 class="text-xl font-bold text-sky-400 mb-2">Vassoura Multiuso</h4>
+                <p class="text-slate-400 text-sm mb-4">Use para limpar manchas espalhadas pela cidade ou defender as ruas contra ameaças.</p>
+                <img src="img/vassoura.png" alt="Vassoura do Jogo" class="w-full h-32 object-cover rounded-lg border border-slate-800 group-hover:border-sky-500/50 transition">
+            </div>
+            <div class="card-mecanica overflow-hidden relative group">
+                <div class="text-4xl mb-4">🎒</div>
+                <h4 class="text-xl font-bold text-sky-400 mb-2">Sistema de Inventário</h4>
+                <p class="text-slate-400 text-sm mb-4">Gerencie suprimentos, guarde consumíveis e troque de equipamento em tempo real.</p>
+                <img src="img/inventario.png" alt="Inventário do Jogo" class="w-full h-32 object-cover rounded-lg border border-slate-800 group-hover:border-sky-500/50 transition">
+            </div>
+            <div class="card-mecanica overflow-hidden relative group">
+                <div class="text-4xl mb-4">🏬</div>
+                <h4 class="text-xl font-bold text-sky-400 mb-2">Sistema de Quests</h4>
+                <p class="text-slate-400 text-sm mb-4">Converse com NPCs pela cidade, aceite tarefas de limpeza urbana e receba recompensas.</p>
+                <img src="img/quests.png" alt="Quests do Jogo" class="w-full h-32 object-cover rounded-lg border border-slate-800 group-hover:border-sky-500/50 transition">
+            </div>
+        </div>
+    </section>
+
+    <!-- AMEAÇAS URBANAS -->
+    <section id="inimigos" class="py-16 px-6 max-w-5xl mx-auto">
+        <h3 class="text-3xl font-bold text-center mb-12">Conheça as Ameaças Urbanas</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex gap-4 items-center">
+                <div class="text-5xl">💧</div>
+                <div>
+                    <h4 class="text-xl font-bold text-red-400">Mancha Mutante</h4>
+                    <p class="text-slate-400 text-sm mt-1">Resíduos acumulados que ganharam vida e tentam desacelerar o jogador pelo mapa.</p>
+                </div>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex gap-4 items-center">
+                <div class="text-5xl">🤖</div>
+                <div>
+                    <h4 class="text-xl font-bold text-red-400">Robô de Limpeza Pifado</h4>
+                    <p class="text-slate-400 text-sm mt-1">Máquinas descontroladas que atacam qualquer um que se aproxime dos postos de coleta.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROADMAP -->
+    <section id="roadmap" class="py-16 px-6 max-w-5xl mx-auto border-t border-slate-800/80">
+        <h3 class="text-3xl font-bold text-center mb-12">Estrada do Desenvolvimento</h3>
+        <div class="space-y-6 max-w-3xl mx-auto">
+            <div class="flex gap-4 items-start bg-slate-900 border border-slate-800 p-5 rounded-xl opacity-70">
+                <div class="bg-sky-500/10 text-sky-400 font-bold px-3 py-1 rounded-lg text-sm mt-1">Fase 1</div>
+                <div>
+                    <h4 class="font-bold text-slate-100">Idealização e GDD (Concluída)</h4>
+                    <p class="text-slate-400 text-sm mt-1">Definição do conceito, criação do Game Design Document e modelagem básica dos cenários 3D na Godot Engine.</p>
+                </div>
+                <div class="text-emerald-400 text-xl ml-auto">✓</div>
+            </div>
+            <div class="flex gap-4 items-start bg-slate-900 border border-slate-800 p-5 rounded-xl border-sky-500/40 shadow-lg shadow-sky-500/5">
+                <div class="bg-sky-500/20 text-sky-300 font-bold px-3 py-1 rounded-lg text-sm mt-1">Fase 2</div>
+                <div>
+                    <h4 class="font-bold text-white">Desenvolvimento Ativo (Atual)</h4>
+                    <p class="text-slate-300 text-sm mt-1">Programação do inventário, criação dos NPCs com falas e integração do site com o banco de dados.</p>
+                </div>
+                <div class="text-sky-400 text-xl ml-auto animate-pulse">●</div>
+            </div>
+            <div class="flex gap-4 items-start bg-slate-900/60 border border-slate-800 p-5 rounded-xl">
+                <div class="bg-slate-800 text-slate-400 font-bold px-3 py-1 rounded-lg text-sm mt-1">Fase 3</div>
+                <div>
+                    <h4 class="font-bold text-slate-300">Beta Fechado (Em breve)</h4>
+                    <p class="text-slate-400 text-sm mt-1">Testes de estabilidade com a turma do TCC para correções de bugs e balanceamento.</p>
+                </div>
+            </div>
+            <div class="flex gap-4 items-start bg-slate-900/40 border border-slate-800 p-5 rounded-xl">
+                <div class="bg-slate-800 text-slate-500 font-bold px-3 py-1 rounded-lg text-sm mt-1">Fase 4</div>
+                <div>
+                    <h4 class="font-bold text-slate-400">Lançamento Oficial (Futuro)</h4>
+                    <p class="text-slate-500 text-sm mt-1">Publicação da versão completa no Itch.io e apresentação final da banca do TCC.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REQUISITOS DO SISTEMA -->
+    <section id="requisitos" class="py-16 px-6 max-w-4xl mx-auto border-t border-slate-800/80">
+        <h3 class="text-3xl font-bold text-center mb-8">Requisitos do Sistema</h3>
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden p-6">
+            <div class="grid md:grid-cols-2 gap-6 text-sm">
+                <div>
+                    <span class="text-sky-400 font-bold uppercase text-xs block mb-3">Requisitos Mínimos & Recomendados</span>
+                    <ul class="space-y-3 text-slate-300">
+                        <li><strong>Sistema Operacional:</strong> Windows 8, 10 ou 11 (64-bits)</li>
+                        <li><strong>Processador:</strong> Intel Core i5 ou equivalente</li>
+                        <li><strong>Memória RAM:</strong> 8 GB RAM</li>
+                    </ul>
+                </div>
+                <div>
+                    <span class="text-sky-400 font-bold uppercase text-xs block mb-3">Gráficos & Armazenamento</span>
+                    <ul class="space-y-3 text-slate-300">
+                        <li><strong>Placa de Vídeo:</strong> NVIDIA GeForce GTX 1080</li>
+                        <li><strong>Armazenamento:</strong> 15 GB de espaço disponível</li>
+                        <li><strong>DirectX:</strong> Versão 11 ou superior</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EQUIPE DO PROJETO -->
+    <section id="equipe" class="py-16 px-6 max-w-6xl mx-auto border-t border-slate-800/80">
+        <h3 class="text-3xl font-bold text-center mb-2">Equipe do Projeto</h3>
+        <p class="text-slate-400 text-center text-sm mb-10">3°A - Desenvolvimento de Sistemas</p>
+        
+        <div class="grid sm:grid-cols-2 md:grid-cols-5 gap-4 text-center">
+            <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl">
+                <div class="w-12 h-12 bg-sky-500/10 text-sky-400 rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-3">GH</div>
+                <h4 class="font-bold text-slate-100 text-sm">Gustavo Henrique</h4>
+                <p class="text-xs text-sky-400 font-semibold mt-1">Programador</p>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl">
+                <div class="w-12 h-12 bg-sky-500/10 text-sky-400 rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-3">AF</div>
+                <h4 class="font-bold text-slate-100 text-sm">Arthur Freire</h4>
+                <p class="text-xs text-sky-400 font-semibold mt-1">Designer</p>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl">
+                <div class="w-12 h-12 bg-sky-500/10 text-sky-400 rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-3">EB</div>
+                <h4 class="font-bold text-slate-100 text-sm">Ezequias Bastos</h4>
+                <p class="text-xs text-sky-400 font-semibold mt-1">Designer</p>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl">
+                <div class="w-12 h-12 bg-sky-500/10 text-sky-400 rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-3">MG</div>
+                <h4 class="font-bold text-slate-100 text-sm">Miguel Grimaldez</h4>
+                <p class="text-xs text-sky-400 font-semibold mt-1">Testador</p>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl">
+                <div class="w-12 h-12 bg-sky-500/10 text-sky-400 rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-3">C</div>
+                <h4 class="font-bold text-slate-100 text-sm">Camilly</h4>
+                <p class="text-xs text-sky-400 font-semibold mt-1">Testadora</p>
+            </div>
+        </div>
+
+        <div class="mt-8 text-center bg-slate-900/40 border border-slate-800/60 p-4 rounded-xl max-w-xl mx-auto">
+            <p class="text-xs text-slate-400 font-semibold uppercase tracking-wider mb-1">Professores Orientadores</p>
+            <p class="text-sm font-bold text-slate-200">Prof. Leonardo & Prof. Yovanni</p>
+        </div>
+    </section>
+
+    <!-- MODAL DE CADASTRO -->
+    <div id="modal-auth" class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+        <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl max-w-md w-full relative">
+            <button id="btn-fechar-modal" class="absolute top-4 right-4 text-slate-400 hover:text-white font-bold">✕</button>
+            <h3 class="text-2xl font-bold text-sky-400 mb-2 text-center">Pré-Registro do Jogador</h3>
+            <p class="text-slate-400 text-sm text-center mb-6">Cadastre seu perfil para garantir acesso ao Beta</p>
+            
+            <form id="form-auth" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-400 uppercase mb-1">Nome de Usuário</label>
+                    <input type="text" id="nome" required class="input-form">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-400 uppercase mb-1">E-mail</label>
+                    <input type="email" id="email" required class="input-form">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-400 uppercase mb-1">Senha</label>
+                    <input type="password" id="senha" required class="input-form">
+                </div>
+                <button type="submit" class="w-full bg-sky-500 hover:bg-sky-600 font-bold py-3 rounded-lg text-white transition">Confirmar Inscrição</button>
+            </form>
+            <p id="msg" class="mt-4 text-center text-sm font-semibold"></p>
+        </div>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer class="py-8 text-center text-xs text-slate-500 border-t border-slate-800/80">
+        <p>© Zaraki Game - Projeto TCC de Desenvolvimento de Sistemas.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
