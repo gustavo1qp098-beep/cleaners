@@ -24,24 +24,27 @@ if (btnModalNav) btnModalNav.addEventListener('click', abrirModal);
 if (btnModalHero) btnModalHero.addEventListener('click', abrirModal);
 if (btnFecharModal) btnFecharModal.addEventListener('click', fecharModal);
 
-// ENVIO DE DADOS PARA O BANCO
+// ENVIO DE DADOS APENAS DE NOME E E-MAIL
 if (formAuth) {
     formAuth.addEventListener('submit', async (e) => {
         e.preventDefault();
         
         const nome = document.getElementById('nome').value;
         const email = document.getElementById('email').value;
-        const senha = document.getElementById('senha').value;
 
         if (msgText) {
             msgText.className = 'mt-4 text-center text-sm font-semibold text-slate-400';
-            msgText.innerText = 'Salvando no banco de dados...';
+            msgText.innerText = 'Enviando pré-registro...';
         }
 
         try {
+            // Insere apenas o nome e e-mail que existem na tabela
             const { error } = await _supabase
                 .from('jogadores')
-                .insert([{ nome, email, senha }]);
+                .insert([{ 
+                    nome: nome, 
+                    email: email 
+                }]);
 
             if (error) {
                 if (msgText) {

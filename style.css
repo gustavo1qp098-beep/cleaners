@@ -31,7 +31,7 @@
     border: 1px solid #1e293b;
     border-radius: 0.5rem;
     padding: 0.75rem;
-    color: #ffffff;
+    color: #ffffff; /* Ajustado para texto branco */
     outline: none;
     transition: border-color 0.2s ease;
 }
