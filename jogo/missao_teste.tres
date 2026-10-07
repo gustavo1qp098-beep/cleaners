@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MissaoData" load_steps=2 format=3 uid="uid://bbxbc5lf0k3rw"]
+
+[ext_resource type="Script" path="res://missao_data.gd" id="1_f0j6l"]
+
+[resource]
+script = ExtResource("1_f0j6l")
+id = "m1_seu_ze"
+titulo = "Limpeza da Feira"
+dialogo_inicio = "Opa, filho! O vento derrubou esse monte de folhagem podre na entrada da feira. Pode dar uma varrida rápida antes que os clientes cheguem?"
+dialogo_fim = "Muito obrigado! Tomara que isso segure a poluição por hoje. Aqui estão suas 40 moedas."
+ferramenta_necessaria = ""
+quantidade_objetivo = 3
+tempo_limite_segundos = 360.0
+recompensa_moedas = 40

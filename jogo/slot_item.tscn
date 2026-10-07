@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgh8rdwnc125y"]
+
+[ext_resource type="Script" path="res://Slot_Item.gd" id="1_a0hdo"]
+[ext_resource type="Texture2D" uid="uid://cjp104wf63x1w" path="res://SLOT.png" id="2_68v6b"]
+
+[node name="SlotItem" type="PanelContainer"]
+custom_minimum_size = Vector2(48, 48)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_a0hdo")
+
+[node name="IconeItem" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_68v6b")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LabelQuantidade" type="Label" parent="."]
+layout_mode = 2

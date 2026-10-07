@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cthumsya4fdjy"]
+
+[ext_resource type="Script" path="res://Lixo.gd" id="1_sgabi"]
+[ext_resource type="PackedScene" uid="uid://bptj884357xam" path="res://trash_bag.glb" id="2_1hibp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sgmbr"]
+size = Vector3(2.42859, 2.58105, 2.07483)
+
+[node name="Lixo" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.525146, 0, 0)
+script = ExtResource("1_sgabi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.714294, 0.790527, 0.0925903)
+shape = SubResource("BoxShape3D_sgmbr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_1hibp")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -0.497861, -1.06537, 0.10526)

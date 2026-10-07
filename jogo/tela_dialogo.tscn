@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfhsv4g4ub4hp"]
+
+[ext_resource type="Script" path="res://TelaDialogo.gd" id="1_p8oha"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekbx7"]
+
+[node name="TelaDialogo" type="CanvasLayer"]
+script = ExtResource("1_p8oha")
+
+[node name="CaixaDialogo" type="PanelContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ekbx7")
+
+[node name="MarginContainer" type="MarginContainer" parent="CaixaDialogo"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CaixaDialogo/MarginContainer"]
+layout_mode = 2
+
+[node name="LabelNome" type="Label" parent="CaixaDialogo/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LabelTexto" type="RichTextLabel" parent="CaixaDialogo/MarginContainer/VBoxContainer"]
+layout_mode = 2

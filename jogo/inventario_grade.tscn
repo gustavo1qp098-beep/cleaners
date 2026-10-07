@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1e6mp7exn6ox"]
+
+[ext_resource type="Script" path="res://Inventario_Grade.gd" id="1_copth"]
+
+[node name="InventarioGrade" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_copth")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GradeSlots" type="GridContainer" parent="PanelContainer"]
+layout_mode = 2
+columns = 12

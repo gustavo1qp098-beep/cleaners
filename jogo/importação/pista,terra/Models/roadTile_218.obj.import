@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dyx5wrp1mt84x"
+path="res://.godot/imported/roadTile_218.obj-a7644ba2f4dccc2978d94c89fe2f522c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/roadTile_218.obj-a7644ba2f4dccc2978d94c89fe2f522c.mesh"]
+
+source_file="res://importação/pista,terra/Models/roadTile_218.obj"
+dest_files=["res://.godot/imported/roadTile_218.obj-a7644ba2f4dccc2978d94c89fe2f522c.mesh", "res://.godot/imported/roadTile_218.obj-a7644ba2f4dccc2978d94c89fe2f522c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
